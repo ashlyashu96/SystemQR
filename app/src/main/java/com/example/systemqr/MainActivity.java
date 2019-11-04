@@ -16,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -46,12 +47,12 @@ public class MainActivity extends AppCompatActivity {
         t6=findViewById(R.id.HD);
         t7=findViewById(R.id.mouse);
         tram=findViewById(R.id.txt_ram);
-        thd=findViewById(R.id.txt_processor);
+        thd=findViewById(R.id.txt_hd);
         tmonitor=findViewById(R.id.txt_monitor);
         tprocessor=findViewById(R.id.txt_processor);
         tkeyboard=findViewById(R.id.txt_key);
         tmouse=findViewById(R.id.txt_mouse);
-        tos=findViewById(R.id.txt_os);
+        tos=findViewById(R.id.textView13);
        imageView = findViewById(R.id.imageView);
 
         qrScan = new IntentIntegrator(this);
@@ -94,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                                 processor=json_obj.getString("processor");
                                 monitor=json_obj.getString("monitor");
                                 keyboard=json_obj.getString("keyboard");
-                                mouse=json_obj.getString("ram");
+                                mouse=json_obj.getString("mouse");
                                 os=json_obj.getString("os");
                                 img=json_obj.getString("image");
                                 tram.setText(ram);
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                                 tos.setText(os);
                                 thd.setText(hd);
                                 tmouse.setText(mouse);
-
+                               // Glide.with();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
